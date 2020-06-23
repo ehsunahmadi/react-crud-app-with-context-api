@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React CRUD app using context-api for states-management & tailwind for CSS
 
 ## Available Scripts
 
