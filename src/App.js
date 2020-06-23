@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Categories from "./components/Categories";
+import EditCategory from "./components/EditCategory";
+import CategoryState from "./context/CategoryState";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
+// todo: 1.moreEfficient Update of category with index, 2.propTypes
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CategoryState>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Categories} />
+            <Route path="/edit/:id" component={EditCategory} />
+          </Switch>
+        </Router>
+    </CategoryState>
   );
-}
+};
 
 export default App;
